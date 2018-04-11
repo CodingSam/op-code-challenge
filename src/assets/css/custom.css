@@ -30,7 +30,6 @@ body {
     flex: 1;
     flex-direction: column;
     padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .accordionItemInfoContainer {
@@ -39,6 +38,37 @@ body {
     justify-content: space-between;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+
+.accordionItemInfoContainer:after, .accordionItemInfoContainer:before {
+	bottom: -1px;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.accordionItemInfoContainer:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #eee;
+	border-width: 10px;
+    margin-left: -10px;
+}
+.accordionItemInfoContainer:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-bottom-color: rgba(0, 0, 0, 0.15);
+	border-width: 11px;
+    margin-left: -11px;
+}
+
+.active.accordionItem .accordionItemInfoContainer:after, .active.accordionItem .accordionItemInfoContainer:before {
+    opacity: 1;
 }
 
 .accordionItemInfo {
@@ -51,6 +81,11 @@ body {
     height: 28px;
     margin-left: 12px;
     margin-right: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+.active .chevron {
+    transform: rotate(180deg)
 }
 
 .accordionItemTitle {
@@ -75,29 +110,12 @@ body {
     position: relative;
 }
 
-.accordionItemContent:after, .accordionItemContent:before {
-	bottom: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+.accordionItemContentContainer {
+    transition: height 0.2s ease-in-out;
+    height: 0;
+    overflow: hidden;
 }
 
-.accordionItemContent:after {
-	border-color: rgba(255, 255, 255, 0);
-	border-bottom-color: #eee;
-	border-width: 10px;
-	margin-left: -10px;
-}
-.accordionItemContent:before {
-	border-color: rgba(0, 0, 0, 0);
-	border-bottom-color: rgba(0, 0, 0, 0.15);
-	border-width: 11px;
-	margin-left: -11px;
-}
 
 .accordionItem.active .accordionItemTitle, .accordionItem.active .accordionItemDescription {
     color: #ff6a10;
