@@ -13,7 +13,7 @@ You need to have [Node.js](https://nodejs.org/en/) installed.
 
 Clone this repo:
 ```
-$ git clone git@github.com:CodingSam/op-coding-challenge.git
+$ git clone git@github.com:CodingSam/op-code-challenge.git
 ```
 Install the required dependencies:
 ```
