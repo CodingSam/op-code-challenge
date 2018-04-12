@@ -2,7 +2,7 @@ import React from 'react'
 
 const AccordionItemContent = ({children}) => {
   return (
-    <div className="accordionItemContent">
+    <div className="accordion__content">
       {children}
     </div>
   )

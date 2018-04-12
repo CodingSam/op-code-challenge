@@ -36,35 +36,35 @@ class Accordion extends Component {
           description="Etiam malesuada sapien quis enim tincidunt auctor donec tellus"
         >
           <AccordionItemContent>
-            <div className="accordionItemContentSection">
-              <h3>Sijoittaprofiili</h3>
-              <div className="row">
-                <p className="label">Voimassaoloaika</p>
-                <p className="value">1.12.2018 asti</p>
+            <div className="accordion__content-section">
+              <h3 className="accordion__sub-title">Sijoittaprofiili</h3>
+              <div className="accordion__row">
+                <p className="accordion__label">Voimassaoloaika</p>
+                <p className="accordion__value">1.12.2018 asti</p>
               </div>
-              <div className="row">
-                <p className="label">Sijoittaprofiili</p>
-                <p className="value">Tuottohakuinen</p>
+              <div className="accordion__row">
+                <p className="accordion__label">Sijoittaprofiili</p>
+                <p className="accordion__value">Tuottohakuinen</p>
               </div>
             </div>
-            <div className="divider" />
-            <div className="accordionItemContentSection">
-              <h3>Sijoittajan palvelukokonaisuus</h3>
-              <div className="row">
-                <p className="label">Sijoittajan palvelupaketti</p>
-                <p className="value">Säästäjä</p>
+            <div className="accordion__divider" />
+            <div className="accordion__content-section">
+              <h3 className="accordion__sub-title">Sijoittajan palvelukokonaisuus</h3>
+              <div className="accordion__row">
+                <p className="accordion__label">Sijoittajan palvelupaketti</p>
+                <p className="accordion__value">Säästäjä</p>
               </div>
-              <div className="row">
-                <p className="label">Arvopaperisäilytys</p>
-                <p className="value">OP Helsinki</p>
+              <div className="accordion__row">
+                <p className="accordion__label">Arvopaperisäilytys</p>
+                <p className="accordion__value">OP Helsinki</p>
               </div>
-              <div className="row">
-                <p className="label">Säilytyksen tunnus</p>
-                <p className="value">12121212</p>
+              <div className="accordion__row">
+                <p className="accordion__label">Säilytyksen tunnus</p>
+                <p className="accordion__value">12121212</p>
               </div>
-              <div className="row">
-                <p className="label">Arvo-osuustilin numero</p>
-                <p className="value">235678</p>
+              <div className="accordion__row">
+                <p className="accordion__label">Arvo-osuustilin numero</p>
+                <p className="accordion__value">235678</p>
               </div>
             </div>
           </AccordionItemContent>

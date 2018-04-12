@@ -2,7 +2,7 @@ import React from 'react'
 
 const AccordionItemDescription = ({children}) => {
   return (
-    <p className="accordionItemDescription">
+    <p className="accordion__description">
       {children}
     </p>
   )

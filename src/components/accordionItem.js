@@ -14,7 +14,7 @@ class AccordionItem extends Component {
 
   componentDidMount() {
     window.requestAnimationFrame(() => {
-      this.setState({height: this.refs["accordionItemContentContainer"].children[0].clientHeight + 1})
+      this.setState({height: this.refs["accordion__content-container"].children[0].clientHeight + 1})
     })
   }
 
@@ -25,15 +25,15 @@ class AccordionItem extends Component {
     const height = active ? this.state.height : 0
 
     return (
-      <div onClick={onClick} className={`accordionItem${active ? ' active': ''}`}>
-        <div className="accordionItemInfoContainer">
-          <div className="accordionItemInfo">
+      <div onClick={onClick} className={`accordion__item ${active ? 'accordion__item--active': ''}`}>
+        <div className="accordion__info-container">
+          <div className="accordion__info">
             <AccordionItemTitle>{title}</AccordionItemTitle>
             <AccordionItemDescription>{description}</AccordionItemDescription>
           </div>
-          <img src={chevron} className="chevron" alt="chevron" />
+          <img src={chevron} className="accordion__chevron" alt="chevron" />
         </div>
-        <div style={{height}} ref="accordionItemContentContainer" className="accordionItemContentContainer">
+        <div style={{height}} ref="accordion__content-container" className="accordion__content-container">
           {content}
         </div>
       </div>

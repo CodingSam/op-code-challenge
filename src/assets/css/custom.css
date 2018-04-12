@@ -25,14 +25,17 @@ body {
     margin-bottom: 30px;
 }
 
-.accordionItem {
+
+/* <--  Accordion --> */
+
+.accordion__item {
     display: flex;
     flex: 1;
     flex-direction: column;
     padding-top: 20px;
 }
 
-.accordionItemInfoContainer {
+.accordion__info-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,8 +44,7 @@ body {
     position: relative;
 }
 
-
-.accordionItemInfoContainer:after, .accordionItemInfoContainer:before {
+.accordion__info-container:after, .accordion__info-container:before {
 	bottom: -1px;
 	left: 50%;
 	border: solid transparent;
@@ -54,53 +56,55 @@ body {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
-.accordionItemInfoContainer:after {
+
+.accordion__info-container:after {
 	border-color: rgba(255, 255, 255, 0);
 	border-bottom-color: #eee;
 	border-width: 10px;
     margin-left: -10px;
 }
-.accordionItemInfoContainer:before {
+
+.accordion__info-container:before {
 	border-color: rgba(0, 0, 0, 0);
 	border-bottom-color: rgba(0, 0, 0, 0.15);
 	border-width: 11px;
     margin-left: -11px;
 }
 
-.active.accordionItem .accordionItemInfoContainer:after, .active.accordionItem .accordionItemInfoContainer:before {
+.accordion__item--active .accordion__info-container:after, .accordion__item--active .accordion__info-container:before {
     opacity: 1;
 }
 
-.accordionItemInfo {
+.accordion__info {
     flex-direction: column;
 }
 
-.chevron {
+.accordion__chevron {
     align-self: center;
     width: 28px;
     height: 28px;
     margin-left: 12px;
     margin-right: 12px;
-    transition: all 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
-.active .chevron {
+.accordion__item--active .accordion__chevron {
     transform: rotate(180deg)
 }
 
-.accordionItemTitle {
+.accordion__title {
     font-size: 20px;
     line-height: 24px;
     color: #323232;
 }
 
-.accordionItemDescription {
+.accordion__description {
     font-size: 16px;
     line-height: 20px;
     color: #6e6e6e;
 }
 
-.accordionItemContent {
+.accordion__content {
     background: #fafafa;
     padding: 40px;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
@@ -110,18 +114,17 @@ body {
     position: relative;
 }
 
-.accordionItemContentContainer {
+.accordion__content-container {
     transition: height 0.2s ease-in-out;
     height: 0;
     overflow: hidden;
 }
 
-
-.accordionItem.active .accordionItemTitle, .accordionItem.active .accordionItemDescription {
+.accordion__item--active .accordion__title, .accordion__item--active .accordion__description {
     color: #ff6a10;
 }
 
-.accordionItemContentSection h3 {
+.accordion__sub-title {
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
@@ -129,37 +132,38 @@ body {
     margin-bottom: 20px;
 }
 
-.accordionItemContent .divider {
+.accordion__divider {
     margin-top: 32px;
     margin-bottom: 40px;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.accordionItemContentSection .label {
+.accordion__label {
     font-size: 16px;
     line-height: 20px;
     color: #323232;
     padding: 8px 0;
 }
 
-.accordionItemContentSection .value {
+.accordion__value {
     font-size: 18px;
     line-height: 24px;
     color: #323232;
     padding: 6px 0;
 }
 
-.row {
+.accordion__row {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
 
-.row * {
+.accordion__row * {
     flex: 1;
     width: 0;
 }
 
+/* <-- Responsive --> */
 
 @media only screen and (max-width: 768px) {
     .page {
@@ -174,28 +178,34 @@ body {
         max-width: 100%;
         margin: 0 16px;
     }
-    .chevron {
+
+    .accordion__chevron {
         margin-right: 0;
     }
-    .accordionItemContent {
+
+    .accordion__content {
         padding: 32px 20px;
     }
-    .accordionItemContentSection .label {
+
+    .accordion__label {
         padding: 0;
     }
     
-    .accordionItemContentSection .value {
+    .accordion__value {
         padding: 0;
     }
-    .row {
+
+    .accordion__row {
         justify-content: flex-start;
         flex-direction: column;
         margin-bottom: 16px;
     }
-    .row:last-of-type {
+
+    .accordion__row:last-of-type {
         margin-bottom: 0;
     }
-    .row * {
+
+    .accordion__row * {
         flex: 0;
         width: auto;
     }
